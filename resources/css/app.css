@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-display: 'Syne', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Paleta del portafolio: negro azulado + acento azul eléctrico */
+    --color-ink-950: #03060d;
+    --color-ink-900: #060b16;
+    --color-ink-800: #0c1424;
+    --color-ink-700: #16213a;
+    --color-ink-600: #22304f;
+    --color-mist-400: #8a96b2;
+    --color-mist-300: #aeb8cf;
+    --color-mist-100: #e8edf8;
+    --color-accent: #4d8dff;
+    --color-accent-strong: #2563eb;
+    --color-accent-soft: rgb(77 141 255 / 0.1);
+
+    --animate-marquee: marquee 35s linear infinite;
+    --animate-float: float 7s ease-in-out infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes float {
+        50% {
+            transform: translateY(-16px);
+        }
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+    }
+
+    ::selection {
+        background: var(--color-accent);
+        color: var(--color-ink-950);
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-ink-900);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-accent-strong);
+        border-radius: 4px;
+    }
+}
+
+/* Controles del panel de administración */
+@utility form-label {
+    @apply mb-1.5 block text-sm font-medium text-mist-100;
+}
+
+@utility form-input {
+    @apply block w-full rounded-md border border-ink-600 bg-ink-950/60 px-3 py-2 text-sm text-mist-100 placeholder:text-mist-400/60 focus:border-accent focus:ring-2 focus:ring-accent/30 focus:outline-none;
+}
+
+@utility form-hint {
+    @apply mt-1 text-xs text-mist-400;
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:outline-none;
+}
+
+@utility btn-primary {
+    @apply btn bg-accent-strong text-white hover:bg-accent;
+}
+
+@utility btn-ghost {
+    @apply btn border border-ink-600 text-mist-300 hover:border-mist-400 hover:text-mist-100;
+}
+
+@utility btn-danger {
+    @apply btn text-rose-400 hover:bg-rose-500/10;
+}
+
+@utility card {
+    @apply rounded-xl border border-ink-700 bg-ink-800/40 p-6;
+}
+
+/* Botones redondeados de la parte pública */
+@utility pill {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0;
+}
+
+@utility pill-primary {
+    @apply pill bg-accent-strong text-white shadow-[0_8px_30px_-8px_rgb(37_99_235/0.7)] hover:bg-accent hover:shadow-[0_12px_40px_-8px_rgb(77_141_255/0.8)];
+}
+
+@utility pill-outline {
+    @apply pill border border-ink-600 text-mist-100 hover:border-accent hover:text-accent;
+}
+
+/* Etiqueta de sección con guion azul delante */
+@utility section-label {
+    @apply mb-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent before:block before:h-0.5 before:w-5 before:rounded-full before:bg-accent before:content-[''];
+}
+
+@utility section-title {
+    @apply font-display text-4xl font-bold leading-[1.05] tracking-tight text-mist-100 sm:text-5xl lg:text-6xl;
+}
+
+@utility text-gradient {
+    @apply bg-gradient-to-r from-accent via-sky-400 to-accent-strong bg-clip-text text-transparent;
+}
+
+/* Halo de luz que sigue al cursor (solo en la parte pública) */
+.spotlight {
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 20%), rgb(37 99 235 / 0.12), transparent 80%);
+}
+
+/* Textura de ruido muy sutil sobre todo el sitio */
+.noise {
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
+
+/* Cuadrícula de fondo del hero, desvanecida en los bordes */
+.hero-grid {
+    background-image:
+        linear-gradient(rgb(77 141 255 / 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(77 141 255 / 0.07) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 60% 40%, black 20%, transparent 70%);
+}
+
+/* Barra de navegación: transparente arriba, con desenfoque al hacer scroll */
+.navbar.is-scrolled {
+    background: rgb(6 11 22 / 0.8);
+    border-color: var(--color-ink-700);
+    backdrop-filter: blur(14px);
+}
+
+.nav-link.is-active {
+    color: var(--color-mist-100);
+}
+
+.nav-link.is-active::after {
+    transform: scaleX(1);
+}
+
+/* Aparición suave al hacer scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--delay, 0ms);
+}
+
+.reveal-left {
+    transform: translateX(-32px);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .animate-marquee,
+    .animate-float,
+    .animate-ping {
+        animation: none;
+    }
+}
