@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         Experience::insert([
             [
                 'role' => 'Desarrollador Full Stack',
-                'company' => 'Bops Soluciones',
+                'company' => 'Bex Soluciones',
                 'company_url' => null,
                 'period' => '2023 — Actualidad',
                 'description' => 'Desarrollo y mantenimiento de plataformas web en Laravel, incluyendo un sistema de trámites multi-tenant, integraciones con APIs externas y paneles administrativos.',
@@ -85,10 +85,10 @@ class DatabaseSeeder extends Seeder
         Project::query()->delete();
         $projects = [
             [
-                'title' => 'Bops Trámites',
+                'title' => 'Bex Trámites',
                 'summary' => 'Plataforma multi-tenant para gestionar trámites en línea, con flujos configurables, notificaciones y panel de seguimiento.',
                 'technologies' => ['Laravel', 'MySQL', 'Tenancy', 'Tailwind CSS'],
-                'client' => 'Bops Soluciones',
+                'client' => 'Bex Soluciones',
                 'year' => 2026,
                 'is_featured' => true,
                 'sort_order' => 1,
