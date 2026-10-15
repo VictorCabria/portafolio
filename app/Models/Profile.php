@@ -33,7 +33,14 @@ class Profile extends Model
 
     public function avatarUrl(): ?string
     {
-        return $this->avatar ? Storage::url($this->avatar) : null;
+        if (blank($this->avatar)) {
+            return null;
+        }
+
+        // Las imágenes versionadas en public/images se sirven como archivos estáticos.
+        return str_starts_with($this->avatar, 'images/')
+            ? asset($this->avatar)
+            : Storage::url($this->avatar);
     }
 
     public function initials(): string

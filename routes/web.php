@@ -18,6 +18,7 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')-
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', Admin\DashboardController::class)->name('dashboard');
+    Route::post('/sincronizar', Admin\SyncContentController::class)->name('content.sync');
     Route::get('/perfil', [Admin\ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/perfil', [Admin\ProfileController::class, 'update'])->name('profile.update');
     Route::resource('proyectos', Admin\ProjectController::class)

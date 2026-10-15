@@ -40,6 +40,13 @@
                 <li><a href="{{ route('admin.experiences.create') }}" class="hover:text-accent">→ Añadir experiencia</a></li>
                 <li><a href="{{ route('home') }}" target="_blank" class="hover:text-accent">→ Ver el portafolio público</a></li>
             </ul>
+
+            <form method="POST" action="{{ route('admin.content.sync') }}" class="mt-6 border-t border-ink-700 pt-4"
+                  onsubmit="return confirm('Esto reemplaza el perfil, la experiencia y los proyectos por los del repositorio. ¿Continuar?')">
+                @csrf
+                <button type="submit" class="btn-ghost w-full text-sm">Sincronizar contenido</button>
+                <p class="mt-2 text-xs">Carga el perfil, la experiencia y los proyectos definidos en el código.</p>
+            </form>
         </section>
     </div>
 </x-layouts.admin>

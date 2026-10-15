@@ -63,6 +63,13 @@ class Project extends Model
 
     public function imageUrl(): ?string
     {
-        return $this->image ? Storage::url($this->image) : null;
+        if (blank($this->image)) {
+            return null;
+        }
+
+        // Las imágenes versionadas en public/images se sirven como archivos estáticos.
+        return str_starts_with($this->image, 'images/')
+            ? asset($this->image)
+            : Storage::url($this->image);
     }
 }
