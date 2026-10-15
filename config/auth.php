@@ -114,4 +114,20 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Administrador desde variables de entorno
+    |--------------------------------------------------------------------------
+    |
+    | Si ADMIN_EMAIL y ADMIN_PASSWORD están definidas, iniciar sesión con ellas
+    | crea o actualiza ese usuario. Permite recuperar el acceso en producción
+    | (Vercel) sin tocar la base de datos a mano.
+    |
+    */
+
+    'admin' => [
+        'email' => env('ADMIN_EMAIL'),
+        'password' => env('ADMIN_PASSWORD'),
+    ],
+
 ];
