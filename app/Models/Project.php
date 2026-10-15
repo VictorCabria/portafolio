@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 #[Fillable([
-    'title', 'slug', 'summary', 'description', 'image', 'technologies', 'client', 'year',
+    'title', 'slug', 'summary', 'description', 'image', 'gallery', 'technologies', 'client', 'year',
     'repo_url', 'demo_url', 'is_featured', 'is_published', 'sort_order',
 ])]
 class Project extends Model
@@ -18,6 +18,7 @@ class Project extends Model
     {
         return [
             'technologies' => 'array',
+            'gallery' => 'array',
             'is_featured' => 'boolean',
             'is_published' => 'boolean',
         ];
@@ -63,13 +64,20 @@ class Project extends Model
 
     public function imageUrl(): ?string
     {
-        if (blank($this->image)) {
-            return null;
-        }
+        return blank($this->image) ? null : static::mediaUrl($this->image);
+    }
 
-        // Las imágenes versionadas en public/images se sirven como archivos estáticos.
-        return str_starts_with($this->image, 'images/')
-            ? asset($this->image)
-            : Storage::url($this->image);
+    /**
+     * @return list<string>
+     */
+    public function galleryUrls(): array
+    {
+        return array_map(static::mediaUrl(...), array_values(array_filter($this->gallery ?? [])));
+    }
+
+    // Las imágenes versionadas en public/images se sirven como archivos estáticos.
+    private static function mediaUrl(string $path): string
+    {
+        return str_starts_with($path, 'images/') ? asset($path) : Storage::url($path);
     }
 }

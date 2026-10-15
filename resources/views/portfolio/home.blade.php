@@ -278,6 +278,25 @@
                                                 @endforeach
                                             </ul>
                                         @endif
+
+                                        @php $showcase = $showcases[$experience->company] ?? null; @endphp
+                                        @if ($showcase)
+                                            <a href="{{ route('projects.show', $showcase) }}" class="group/showcase mb-6 block">
+                                                @if ($showcase->imageUrl())
+                                                    <img src="{{ $showcase->imageUrl() }}" alt="Portada de {{ $showcase->title }}" loading="lazy"
+                                                         class="aspect-[16/10] w-full rounded-xl border border-ink-600 object-cover transition group-hover/showcase:border-accent/40">
+                                                @endif
+                                                <div class="mt-2 grid grid-cols-5 gap-1.5">
+                                                    @foreach ($showcase->galleryUrls() as $shot)
+                                                        <img src="{{ $shot }}" alt="" loading="lazy"
+                                                             class="aspect-[9/19] w-full rounded-md border border-ink-600 object-cover object-top">
+                                                    @endforeach
+                                                </div>
+                                                <span class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
+                                                    Ver proyecto: {{ $showcase->title }} <x-icon name="arrow" class="size-3.5" />
+                                                </span>
+                                            </a>
+                                        @endif
                                     </div>
 
                                     <div class="flex items-center gap-3 border-t border-ink-700/70 pt-5">

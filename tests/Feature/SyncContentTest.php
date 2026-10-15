@@ -24,6 +24,12 @@ class SyncContentTest extends TestCase
         $this->assertTrue(Project::where('title', 'TODOS – App de telemedicina')->exists());
         $this->assertStringEndsWith('/images/perfil.jpg', Profile::current()->avatarUrl());
         $this->assertModelExists($admin);
+
+        $todos = Project::where('title', 'TODOS – App de telemedicina')->first();
+        $this->assertCount(5, $todos->galleryUrls());
+
+        $this->get('/')->assertOk()->assertSee('Ver proyecto: TODOS – App de telemedicina');
+        $this->get(route('projects.show', $todos))->assertOk()->assertSee('images/proyectos/todos/03-home-consultas.jpg');
     }
 
     public function test_guests_cannot_sync_content(): void

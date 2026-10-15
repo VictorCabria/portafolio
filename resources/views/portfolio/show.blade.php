@@ -42,6 +42,20 @@
                      class="mt-12 w-full rounded-lg border border-ink-700 shadow-2xl shadow-black/40">
             @endif
 
+            @if ($shots = $project->galleryUrls())
+                <section class="mt-12" aria-label="Capturas">
+                    <h2 class="mb-6 text-sm font-bold uppercase tracking-widest text-mist-100">Capturas</h2>
+                    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+                        @foreach ($shots as $shot)
+                            <a href="{{ $shot }}" target="_blank" rel="noopener">
+                                <img src="{{ $shot }}" alt="Captura {{ $loop->iteration }} de {{ $project->title }}" loading="lazy"
+                                     class="w-full rounded-xl border border-ink-700 shadow-xl shadow-black/30 transition hover:-translate-y-1 hover:border-accent/40">
+                            </a>
+                        @endforeach
+                    </div>
+                </section>
+            @endif
+
             @if ($project->description)
                 <div class="prose prose-invert mt-12 max-w-none prose-headings:text-mist-100 prose-a:text-accent prose-strong:text-mist-100 prose-p:text-mist-400 prose-li:text-mist-400 prose-li:marker:text-accent">
                     {!! Str::markdown($project->description, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
