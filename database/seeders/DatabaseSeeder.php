@@ -23,14 +23,14 @@ class DatabaseSeeder extends Seeder
         Profile::query()->delete();
         Profile::create([
             'name' => 'Víctor Cabria',
-            'role' => 'Desarrollador Full Stack',
-            'tagline' => 'Construyo aplicaciones web robustas, rápidas y fáciles de usar.',
+            'role' => 'Desarrollador Móvil y Full Stack',
+            'tagline' => 'Desarrollo aplicaciones móviles que funcionan con y sin conexión a internet, con backends sólidos en Laravel.',
             'about' => "Soy desarrollador web especializado en Laravel y en el ecosistema PHP. Me gusta convertir problemas de negocio en software claro, mantenible y bien diseñado.\n\nHe trabajado en sistemas de trámites, plataformas multi-tenant y paneles administrativos, cuidando tanto la arquitectura del backend como la experiencia del usuario final.\n\nFuera del código, disfruto aprendiendo nuevas tecnologías y compartiendo lo que aprendo con otros desarrolladores.",
             'location' => 'Colombia',
-            'email' => 'victor.cabria@bexsoluciones.com',
+            'email' => 'victorjosecabria11@gmail.com',
             'github_url' => 'https://github.com/',
             'linkedin_url' => 'https://www.linkedin.com/',
-            'skills' => ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'Vue', 'Tailwind CSS', 'Git', 'Docker'],
+            'skills' => ['Flutter', 'Dart', 'Apps offline-first', 'Laravel', 'APIs REST', 'Desarrollo con IA', 'Firebase', 'MySQL', 'PostgreSQL', 'React Native (básico)'],
             'available_for_work' => true,
         ]);
 
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         Experience::insert([
             [
                 'role' => 'Desarrollador Full Stack',
-                'company' => 'Bex Soluciones',
+                'company' => 'Bops Soluciones',
                 'company_url' => null,
                 'period' => '2023 — Actualidad',
                 'description' => 'Desarrollo y mantenimiento de plataformas web en Laravel, incluyendo un sistema de trámites multi-tenant, integraciones con APIs externas y paneles administrativos.',
@@ -48,13 +48,35 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'role' => 'Desarrollador Web',
-                'company' => 'Empresa anterior',
+                'role' => 'Frontend Developer',
+                'company' => 'BOP Solutions LLC',
                 'company_url' => null,
-                'period' => '2021 — 2023',
-                'description' => 'Creación de sitios y aplicaciones a medida para clientes, desde la maqueta hasta el despliegue en producción.',
-                'technologies' => json_encode(['PHP', 'JavaScript', 'Bootstrap', 'MySQL']),
+                'period' => 'feb. 2024 — sept. 2024',
+                'description' => 'Desarrollo front end de aplicaciones móviles con Flutter y Dart siguiendo la arquitectura MVVM, implementando especificaciones de diseño y trabajando en equipo con Git y Bitbucket. Contrato temporal · Miami, Florida (híbrido).',
+                'technologies' => json_encode(['Flutter', 'Dart', 'MVVM', 'Desarrollo Android', 'Desarrollo front end', 'Especificaciones de diseño', 'Git', 'Bitbucket', 'Trabajo en equipo']),
                 'sort_order' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'role' => 'Pasante de TI',
+                'company' => 'Hotel Capilla del Mar',
+                'company_url' => null,
+                'period' => 'abr. 2023 — oct. 2023',
+                'description' => 'Prácticas en el área de tecnología: mantenimiento de equipos y soporte al servicio al huésped. Contrato de prácticas · Cartagena de Indias (presencial).',
+                'technologies' => json_encode(['Mantenimiento de equipos', 'Servicio al huésped']),
+                'sort_order' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'role' => 'Full Stack Developer',
+                'company' => 'Synergia',
+                'company_url' => null,
+                'period' => 'ene. 2022 — feb. 2023',
+                'description' => 'Desarrollo de aplicaciones Android con Flutter, Dart y Firebase, trabajando con bases de datos, resolución de incidencias y control de calidad del producto bajo metodología Scrum. Jornada completa · Cartagena de Indias (híbrido).',
+                'technologies' => json_encode(['Flutter', 'Dart', 'Firebase', 'Desarrollo Android', 'Bases de datos', 'Scrum', 'Git', 'Calidad de producto', 'Resolución de incidencias', 'Especificaciones de diseño']),
+                'sort_order' => 4,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -63,10 +85,10 @@ class DatabaseSeeder extends Seeder
         Project::query()->delete();
         $projects = [
             [
-                'title' => 'Bex Trámites',
+                'title' => 'Bops Trámites',
                 'summary' => 'Plataforma multi-tenant para gestionar trámites en línea, con flujos configurables, notificaciones y panel de seguimiento.',
                 'technologies' => ['Laravel', 'MySQL', 'Tenancy', 'Tailwind CSS'],
-                'client' => 'Bex Soluciones',
+                'client' => 'Bops Soluciones',
                 'year' => 2026,
                 'is_featured' => true,
                 'sort_order' => 1,
