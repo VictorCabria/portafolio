@@ -108,6 +108,23 @@ class ContentSeeder extends Seeder
                 'sort_order' => 2,
             ],
             [
+                'title' => 'Salud UIS – Gestión en Salud Ambiental',
+                'summary' => 'App móvil para inspectores de salud ambiental: sincroniza personas y establecimientos para consultarlos en campo y diligenciar actas, incluso sin conexión.',
+                'technologies' => ['Flutter', 'Dart', 'BLoC', 'SQLite', 'Dio', 'API REST', 'Clean Architecture'],
+                'year' => 2025,
+                'image' => 'images/proyectos/salud-ambiental.jpg',
+                'description' => "## El reto\n\nLos inspectores de salud ambiental necesitaban consultar en campo a las personas y sus establecimientos (hospitales, centros de salud, clínicas y puestos de salud) y diligenciar las actas de cada visita, aunque no tuvieran buena conexión a internet.\n\n## La solución\n\nDesarrollé la app en Flutter y Dart con arquitectura limpia: capas de dominio y datos, casos de uso, repositorios e inyección de dependencias con get_it, y el estado manejado con Cubits de BLoC.\n\nEl inspector inicia sesión con su número de documento contra una API REST (Dio con token Bearer). Con un botón sincroniza las personas y los establecimientos, con un diálogo que muestra el avance. Los datos se guardan en una base SQLite local con migraciones, así que la consulta funciona sin conexión. Desde la lista de personas, con buscador, se elige el establecimiento y se ven las actas disponibles para diligenciar. Los errores de la base local se reportan a Firebase Crashlytics.\n\n## Resultados\n\n- Consulta de personas y establecimientos en campo sin depender de la conexión\n- Sincronización con la API en un solo paso y con progreso visible\n- Base de código organizada por capas, fácil de mantener y probar",
+                'gallery' => [
+                    'images/proyectos/salud/01-login.jpg',
+                    'images/proyectos/salud/02-sincronizacion.jpg',
+                    'images/proyectos/salud/03-personas.jpg',
+                    'images/proyectos/salud/04-establecimientos.jpg',
+                    'images/proyectos/salud/05-actas.jpg',
+                ],
+                'is_featured' => true,
+                'sort_order' => 3,
+            ],
+            [
                 'title' => "D'César GPS – Rastreo de flotas",
                 'summary' => 'App móvil para monitorear vehículos en tiempo real sobre el mapa y administrar dispositivos, geocercas, conductores, comandos y reportes.',
                 'technologies' => ['Flutter', 'Dart', 'GetX', 'flutter_map', 'API Traccar', 'WebSocket'],
@@ -123,7 +140,7 @@ class ContentSeeder extends Seeder
                     'images/proyectos/gps/05-menu.jpg',
                 ],
                 'is_featured' => true,
-                'sort_order' => 3,
+                'sort_order' => 4,
             ],
             [
                 'title' => 'Préstamos MC – Gestión de préstamos y cobros',
@@ -141,7 +158,7 @@ class ContentSeeder extends Seeder
                     'images/proyectos/prestamos/05-transacciones.jpg',
                 ],
                 'is_featured' => true,
-                'sort_order' => 4,
+                'sort_order' => 5,
             ],
             [
                 'title' => 'Prácticas de TI – Hotel Capilla del Mar',
@@ -159,7 +176,7 @@ class ContentSeeder extends Seeder
                     'images/proyectos/practicas/05-ubicacion.jpg',
                 ],
                 'is_featured' => false,
-                'sort_order' => 5,
+                'sort_order' => 6,
             ],
             [
                 'title' => 'Portafolio personal',
@@ -167,7 +184,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel 13', 'Blade', 'Tailwind CSS 4', 'Vite'],
                 'year' => 2026,
                 'is_featured' => true,
-                'sort_order' => 6,
+                'sort_order' => 7,
             ],
             [
                 'title' => 'Dashboard de ventas',
@@ -175,7 +192,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Vue', 'Chart.js'],
                 'year' => 2025,
                 'is_featured' => true,
-                'sort_order' => 7,
+                'sort_order' => 8,
             ],
             [
                 'title' => 'API de inventario',
@@ -183,7 +200,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Sanctum', 'MySQL'],
                 'year' => 2024,
                 'is_featured' => false,
-                'sort_order' => 8,
+                'sort_order' => 9,
             ],
         ];
 
