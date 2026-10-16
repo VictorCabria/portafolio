@@ -15,9 +15,9 @@ class PortfolioController extends Controller
             'experiences' => Experience::ordered()->get(),
             'projects' => Project::published()->where('is_featured', true)->ordered()->get(),
             'projectsCount' => Project::published()->count(),
-            // Proyecto con galería de cada empresa, para mostrarlo en su tarjeta de experiencia.
+            // Proyectos con galería de cada empresa, para mostrarlos en su tarjeta de experiencia.
             'showcases' => Project::published()->whereNotNull('client')->whereNotNull('gallery')->ordered()->get()
-                ->unique('client')->keyBy('client'),
+                ->groupBy('client'),
         ]);
     }
 

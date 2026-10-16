@@ -279,8 +279,7 @@
                                             </ul>
                                         @endif
 
-                                        @php $showcase = $showcases[$experience->company] ?? null; @endphp
-                                        @if ($showcase)
+                                        @foreach ($showcases[$experience->company] ?? [] as $showcase)
                                             <a href="{{ route('projects.show', $showcase) }}" class="group/showcase mb-6 block">
                                                 @if ($showcase->imageUrl())
                                                     <img src="{{ $showcase->imageUrl() }}" alt="Portada de {{ $showcase->title }}" loading="lazy"
@@ -296,7 +295,7 @@
                                                     Ver proyecto: {{ $showcase->title }} <x-icon name="arrow" class="size-3.5" />
                                                 </span>
                                             </a>
-                                        @endif
+                                        @endforeach
                                     </div>
 
                                     <div class="flex items-center gap-3 border-t border-ink-700/70 pt-5">
