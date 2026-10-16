@@ -26,6 +26,7 @@ class ProfileController extends Controller
             'about' => ['nullable', 'string', 'max:5000'],
             'location' => ['nullable', 'string', 'max:120'],
             'email' => ['nullable', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:30'],
             'cv_url' => ['nullable', 'url', 'max:255'],
             'github_url' => ['nullable', 'url', 'max:255'],
             'linkedin_url' => ['nullable', 'url', 'max:255'],

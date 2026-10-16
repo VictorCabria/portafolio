@@ -19,11 +19,12 @@ class ContentSeeder extends Seeder
         Profile::create([
             'name' => 'Víctor Cabria',
             'role' => 'Desarrollador Móvil y Full Stack',
-            'tagline' => 'Desarrollo aplicaciones móviles que funcionan con y sin conexión a internet, con backends sólidos en Laravel.',
+            'tagline' => 'Desarrollo aplicaciones móviles con Flutter y backends sólidos en Laravel.',
             'about' => "Soy desarrollador de aplicaciones móviles con 3 años de experiencia en el desarrollo de aplicaciones multiplataforma con Dart y Flutter. He participado en diversos proyectos con Firebase y MySQL como plataformas de backend, y uso SQLite principalmente para la gestión y el almacenamiento local de información en los dispositivos. También tengo experiencia en la integración y el consumo de APIs externas, para que la aplicación se comunique de forma eficiente con servicios web.\n\nAdemás, desarrollo plataformas web y backends con Laravel y el ecosistema PHP: APIs REST, paneles administrativos y sistemas como una plataforma de trámites multi-tenant, con MySQL como base de datos.\n\nManejo Git para el control de versiones, lo que me permite colaborar eficientemente en equipos de desarrollo y gestionar el código de manera efectiva. Mi enfoque está en entregar productos de alta calidad, orientados al usuario y con un alto rendimiento.\n\nSoy audaz para adquirir nuevas experiencias, conocimientos y relaciones interpersonales, y me gusta aportar mis ideas, conocimientos y talento en las áreas de programación, servicio al cliente y mantenimiento de equipos.",
             'location' => 'Colombia',
             'avatar' => 'images/perfil.jpg',
             'email' => 'victorjosecabria11@gmail.com',
+            'phone' => '350 624 1755',
             'github_url' => 'https://github.com/',
             'linkedin_url' => 'https://www.linkedin.com/',
             'skills' => ['Flutter', 'Dart', 'Apps offline-first', 'Laravel', 'APIs REST', 'Desarrollo con IA', 'Firebase', 'MySQL', 'PostgreSQL', 'React Native (básico)'],

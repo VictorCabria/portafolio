@@ -35,6 +35,8 @@
                          hint="Separadas por comas: PHP, Laravel, Vue…" />
                 <x-field name="location" label="Ubicación" :value="$profile->location" />
                 <x-field name="email" label="Email de contacto" type="email" :value="$profile->email" />
+                <x-field name="phone" label="Teléfono / WhatsApp" type="tel" :value="$profile->phone"
+                         hint="Se muestra en el encabezado y en contacto, con enlace a WhatsApp." />
             </div>
 
             <div class="mt-6">

@@ -44,6 +44,14 @@
             </ul>
 
             <div class="flex items-center gap-3">
+                @if ($profile->whatsappUrl())
+                    <a href="{{ $profile->whatsappUrl() }}" target="_blank" rel="noreferrer noopener"
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-mist-100 transition hover:text-accent"
+                       aria-label="Escríbeme por WhatsApp al {{ $profile->phone }}">
+                        <x-icon name="phone" class="size-4 text-accent" />
+                        <span class="hidden lg:inline">{{ $profile->phone }}</span>
+                    </a>
+                @endif
                 @if ($profile->email)
                     <a href="mailto:{{ $profile->email }}" class="pill-primary hidden !px-5 !py-2.5 sm:inline-flex">Contrátame</a>
                 @endif

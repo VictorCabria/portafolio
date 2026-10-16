@@ -424,6 +424,12 @@
                                 {{ $profile->email }}
                                 <x-icon name="arrow" class="size-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                             </a>
+                            @if ($profile->whatsappUrl())
+                                <a href="{{ $profile->whatsappUrl() }}" target="_blank" rel="noreferrer noopener"
+                                   class="mt-5 flex items-center gap-2 font-display text-lg font-bold text-white transition hover:text-sky-200 sm:text-xl">
+                                    <x-icon name="phone" class="size-5 shrink-0" /> {{ $profile->phone }}
+                                </a>
+                            @endif
                             <x-social-links :profile="$profile" class="mt-8 [&_a]:text-blue-100 [&_a:hover]:text-white" />
                         </div>
                     @endif

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
 #[Fillable([
-    'name', 'role', 'tagline', 'about', 'location', 'email', 'avatar', 'cv_url',
+    'name', 'role', 'tagline', 'about', 'location', 'email', 'phone', 'avatar', 'cv_url',
     'github_url', 'linkedin_url', 'twitter_url', 'website_url', 'skills', 'available_for_work',
 ])]
 class Profile extends Model
@@ -29,6 +29,20 @@ class Profile extends Model
             'name' => 'Tu Nombre',
             'role' => 'Desarrollador Web',
         ]);
+    }
+
+    /**
+     * Enlace de WhatsApp al teléfono; asume Colombia (+57) si no trae indicativo.
+     */
+    public function whatsappUrl(): ?string
+    {
+        $digits = preg_replace('/\D/', '', (string) $this->phone);
+
+        if ($digits === '') {
+            return null;
+        }
+
+        return 'https://wa.me/'.(strlen($digits) === 10 ? '57'.$digits : $digits);
     }
 
     public function avatarUrl(): ?string
