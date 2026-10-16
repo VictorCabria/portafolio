@@ -144,12 +144,30 @@ class ContentSeeder extends Seeder
                 'sort_order' => 4,
             ],
             [
+                'title' => 'Prácticas de TI – Hotel Capilla del Mar',
+                'summary' => 'Prácticas en el área de tecnología del hotel: mantenimiento de equipos y soporte al servicio al huésped.',
+                'technologies' => ['Mantenimiento de equipos', 'Servicio al huésped'],
+                'client' => 'Hotel Capilla del Mar',
+                'year' => 2023,
+                'image' => 'images/proyectos/practicas-ti.jpg',
+                'description' => "## Las prácticas\n\nDe abril a octubre de 2023 hice mis prácticas como pasante de TI en el Hotel Capilla del Mar, en Cartagena de Indias, con contrato de prácticas y de forma presencial.\n\n## Lo que hice\n\n- Mantenimiento de los equipos del área de tecnología\n- Soporte al servicio al huésped desde el área de tecnología",
+                'gallery' => [
+                    'images/proyectos/practicas/01-pasante-ti.jpg',
+                    'images/proyectos/practicas/02-mantenimiento.jpg',
+                    'images/proyectos/practicas/03-servicio-huesped.jpg',
+                    'images/proyectos/practicas/04-periodo.jpg',
+                    'images/proyectos/practicas/05-ubicacion.jpg',
+                ],
+                'is_featured' => false,
+                'sort_order' => 5,
+            ],
+            [
                 'title' => 'Portafolio personal',
                 'summary' => 'Este mismo sitio: portafolio administrable con panel propio para gestionar perfil, experiencia y proyectos.',
                 'technologies' => ['Laravel 13', 'Blade', 'Tailwind CSS 4', 'Vite'],
                 'year' => 2026,
                 'is_featured' => true,
-                'sort_order' => 5,
+                'sort_order' => 6,
             ],
             [
                 'title' => 'Dashboard de ventas',
@@ -157,7 +175,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Vue', 'Chart.js'],
                 'year' => 2025,
                 'is_featured' => true,
-                'sort_order' => 6,
+                'sort_order' => 7,
             ],
             [
                 'title' => 'API de inventario',
@@ -165,7 +183,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Sanctum', 'MySQL'],
                 'year' => 2024,
                 'is_featured' => false,
-                'sort_order' => 7,
+                'sort_order' => 8,
             ],
         ];
 
