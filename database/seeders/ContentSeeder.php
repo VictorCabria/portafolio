@@ -126,12 +126,29 @@ class ContentSeeder extends Seeder
                 'sort_order' => 3,
             ],
             [
+                'title' => 'Préstamos MC – Gestión de préstamos y cobros',
+                'summary' => 'App móvil para administrar préstamos, clientes y cobradores, con el recaudo diario en ruta organizado por sesiones.',
+                'technologies' => ['Flutter', 'Dart', 'GetX', 'Firebase Auth', 'Cloud Firestore'],
+                'year' => 2022,
+                'image' => 'images/proyectos/prestamos-cobros.jpg',
+                'description' => "## El reto\n\nUn negocio de préstamos en ruta necesitaba una app para llevar el control de créditos, cuotas y cobros: que el administrador gestionara la cartera y cada cobrador registrara lo que recaudaba en el día.\n\n## La solución\n\nDesarrollé la app en Flutter y Dart con GetX para estado y navegación, y Firebase como backend: Firebase Auth para el ingreso del administrador y Cloud Firestore como base de datos en tiempo real. Los cobradores entran con un PIN de 4 dígitos desde el mismo dispositivo.\n\nEl trabajo diario se organiza por sesiones: al abrir una, el inicio muestra el saldo, los préstamos, los recaudos y las transacciones del día. La app permite registrar préstamos según su modalidad (diaria, semanal, quincenal o mensual) con el cálculo de cuotas e intereses, llevar el recaudo por barrio y registrar gastos e ingresos de la ruta. Desde el panel de administración se gestionan clientes, cobradores, tipos de préstamo, conceptos, barrios y zonas.\n\n## Resultados\n\n- Cartera de préstamos y saldos actualizados al instante en Firestore\n- Cierre diario del cobrador con su saldo, recaudos y gastos\n- Clientes ordenados por recorrido para planear la ruta de cobro",
+                'gallery' => [
+                    'images/proyectos/prestamos/01-login-cobrador.jpg',
+                    'images/proyectos/prestamos/02-inicio.jpg',
+                    'images/proyectos/prestamos/03-prestamos.jpg',
+                    'images/proyectos/prestamos/04-clientes.jpg',
+                    'images/proyectos/prestamos/05-transacciones.jpg',
+                ],
+                'is_featured' => true,
+                'sort_order' => 4,
+            ],
+            [
                 'title' => 'Portafolio personal',
                 'summary' => 'Este mismo sitio: portafolio administrable con panel propio para gestionar perfil, experiencia y proyectos.',
                 'technologies' => ['Laravel 13', 'Blade', 'Tailwind CSS 4', 'Vite'],
                 'year' => 2026,
                 'is_featured' => true,
-                'sort_order' => 4,
+                'sort_order' => 5,
             ],
             [
                 'title' => 'Dashboard de ventas',
@@ -139,7 +156,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Vue', 'Chart.js'],
                 'year' => 2025,
                 'is_featured' => true,
-                'sort_order' => 5,
+                'sort_order' => 6,
             ],
             [
                 'title' => 'API de inventario',
@@ -147,7 +164,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Sanctum', 'MySQL'],
                 'year' => 2024,
                 'is_featured' => false,
-                'sort_order' => 6,
+                'sort_order' => 7,
             ],
         ];
 
