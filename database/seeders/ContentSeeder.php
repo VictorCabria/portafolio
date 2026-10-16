@@ -108,12 +108,30 @@ class ContentSeeder extends Seeder
                 'sort_order' => 2,
             ],
             [
+                'title' => "D'César GPS – Rastreo de flotas",
+                'summary' => 'App móvil para monitorear vehículos en tiempo real sobre el mapa y administrar dispositivos, geocercas, conductores, comandos y reportes.',
+                'technologies' => ['Flutter', 'Dart', 'GetX', 'flutter_map', 'API Traccar', 'WebSocket'],
+                'client' => 'Synergia',
+                'year' => 2023,
+                'image' => 'images/proyectos/gps-rastreo.jpg',
+                'description' => "## El reto\n\nD'César GPS necesitaba una app móvil para que sus clientes siguieran sus vehículos (motos, camionetas, buses y camiones) en tiempo real y gestionaran la plataforma de rastreo sin depender de la versión web.\n\n## La solución\n\nDesarrollé la app en Flutter y Dart con GetX para estado, navegación e inyección de dependencias, organizada por módulos (dispositivos, mapa, geocercas, grupos, conductores, notificaciones, comandos, usuarios y reportes). La app consume la API REST de Traccar y recibe las posiciones y eventos por WebSocket para actualizar el mapa al instante.\n\nEl mapa, hecho con flutter_map, muestra cada vehículo con su estado (en línea, apagado o desconocido) y, al tocarlo, su velocidad, hora del último reporte y si está encendido. Desde la lista de dispositivos se filtra por estado, se ve el nivel de batería y se accede a editar, enviar comandos o asignar geocercas y conductores. Las alarmas (choque, batería baja, encendido, apagado o corte de energía) llegan como notificaciones locales.\n\n## Resultados\n\n- Seguimiento de toda la flota en tiempo real desde el celular\n- Administración completa de la plataforma GPS sin entrar a la web\n- Alertas inmediatas ante eventos críticos del vehículo",
+                'gallery' => [
+                    'images/proyectos/gps/01-login.jpg',
+                    'images/proyectos/gps/02-dispositivos.jpg',
+                    'images/proyectos/gps/03-mapa.jpg',
+                    'images/proyectos/gps/04-mapa-vehiculo.jpg',
+                    'images/proyectos/gps/05-menu.jpg',
+                ],
+                'is_featured' => true,
+                'sort_order' => 3,
+            ],
+            [
                 'title' => 'Portafolio personal',
                 'summary' => 'Este mismo sitio: portafolio administrable con panel propio para gestionar perfil, experiencia y proyectos.',
                 'technologies' => ['Laravel 13', 'Blade', 'Tailwind CSS 4', 'Vite'],
                 'year' => 2026,
                 'is_featured' => true,
-                'sort_order' => 3,
+                'sort_order' => 4,
             ],
             [
                 'title' => 'Dashboard de ventas',
@@ -121,7 +139,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Vue', 'Chart.js'],
                 'year' => 2025,
                 'is_featured' => true,
-                'sort_order' => 4,
+                'sort_order' => 5,
             ],
             [
                 'title' => 'API de inventario',
@@ -129,7 +147,7 @@ class ContentSeeder extends Seeder
                 'technologies' => ['Laravel', 'Sanctum', 'MySQL'],
                 'year' => 2024,
                 'is_featured' => false,
-                'sort_order' => 5,
+                'sort_order' => 6,
             ],
         ];
 
