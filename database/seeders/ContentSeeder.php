@@ -34,12 +34,12 @@ class ContentSeeder extends Seeder
         Experience::query()->delete();
         Experience::insert([
             [
-                'role' => 'Desarrollador Full Stack',
+                'role' => 'Desarrollador Móvil y Full Stack',
                 'company' => 'Bex Soluciones',
                 'company_url' => null,
-                'period' => '2023 — Actualidad',
-                'description' => 'Desarrollo y mantenimiento de plataformas web en Laravel, incluyendo un sistema de trámites multi-tenant, integraciones con APIs externas y paneles administrativos.',
-                'technologies' => json_encode(['Laravel', 'MySQL', 'Livewire', 'Tailwind CSS']),
+                'period' => 'sept. 2024 — Actualidad',
+                'description' => 'Desarrollo y mantenimiento de Bex Trámites, app móvil en Flutter para gestores de campo (cobranza, prospección y gestión de clientes) con rastreo GPS en segundo plano, mapas sin conexión y sincronización offline-first. También trabajo en el backend Laravel multi-tenant que la alimenta, integraciones con APIs y despliegue continuo a Play Store.',
+                'technologies' => json_encode(['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'SQLite', 'Firebase', 'GPS en segundo plano', 'Laravel', 'MySQL', 'WebSockets', 'CI/CD']),
                 'sort_order' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -82,11 +82,26 @@ class ContentSeeder extends Seeder
         Project::query()->delete();
         $projects = [
             [
-                'title' => 'Bex Trámites',
-                'summary' => 'Plataforma multi-tenant para gestionar trámites en línea, con flujos configurables, notificaciones y panel de seguimiento.',
-                'technologies' => ['Laravel', 'MySQL', 'Tenancy', 'Tailwind CSS'],
+                'title' => 'Bex Trámites – Gestión de trámites en campo',
+                'summary' => 'App móvil para gestores de campo: cobranza, prospección y gestión de clientes con rastreo GPS, mapas sin conexión y sincronización offline-first.',
+                'technologies' => ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'SQLite', 'Dio', 'flutter_map', 'Firebase', 'Laravel Reverb'],
                 'client' => 'Bex Soluciones',
                 'year' => 2026,
+                'description' => "## El reto
+
+Los gestores comerciales y de cobranza de Bex Soluciones trabajan en la calle visitando clientes y prospectos, muchas veces con mala señal. Necesitaban una app para registrar cada gestión en el momento, con su ubicación, aunque no tuvieran conexión, y que la empresa pudiera seguir el recorrido de su equipo en tiempo real.
+
+## La solución
+
+Desde septiembre de 2024 desarrollo y mantengo la app en Flutter y Dart con arquitectura limpia (dominio, datos y presentación), inyección de dependencias con get_it y el estado manejado con BLoC y Cubits. Los datos viven en una base SQLite local con migraciones y una cola de procesamiento que envía las gestiones a la API REST (Dio) cuando vuelve la conexión, con reintentos y control de límite de peticiones.
+
+La app rastrea la posición del gestor en segundo plano, muestra clientes, actividades y rutas sobre mapas con flutter_map y permite descargar zonas para usarlas sin internet. Incluye agenda de actividades y tareas, gestión de clientes y prospectos con etiquetas, acuerdos de pago con recibos en PDF, legalización de gastos, autorización de habeas data, PQRS, formularios dinámicos configurables desde el servidor y captura de fotos y firma. Las actualizaciones llegan en tiempo real por WebSockets con Laravel Reverb, y Firebase se encarga de las notificaciones push, Remote Config, Analytics y Crashlytics. Cada cambio en main se publica automáticamente en Play Store con GitHub Actions.
+
+## Resultados
+
+- Gestión en campo sin depender de la conexión, con sincronización automática al recuperar la señal
+- Seguimiento del recorrido de los gestores en tiempo real
+- Más de 300 versiones publicadas con despliegue continuo a Play Store",
                 'is_featured' => true,
                 'sort_order' => 1,
             ],
